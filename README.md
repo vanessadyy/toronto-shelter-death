@@ -1,30 +1,38 @@
 # Starter folder
 
+# Toronto Shelter Utilization Data Analysis
+
 ## Overview
 
-This repo provides students with a foundation for their own projects associated with *Telling Stories with Data*. You do not need every aspect for every paper and you should delete aspects that you do not need.
-
+This project analyzes the "Daily Shelter & Overnight Service Occupancy Capacity" dataset from Open Data Toronto. The goal is to explore trends in shelter occupancy and capacity throughout 2023, providing insights into shelter utilization in the city.
 
 ## File Structure
 
-The repo is structured as:
+The repo is structured as follows:
 
--   `data/raw_data` contains the raw data as obtained from X.
--   `data/analysis_data` contains the cleaned dataset that was constructed.
--   `model` contains fitted models. 
--   `other` contains relevant literature, details about LLM chat interactions, and sketches.
--   `paper` contains the files used to generate the paper, including the Quarto document and reference bibliography file, as well as the PDF of the paper. 
--   `scripts` contains the R scripts used to simulate, download and clean data.
+- `data/raw_data`: Contains the raw data downloaded from Open Data Toronto.
+- `scripts`: Contains R scripts used for simulating, downloading, cleaning, and testing data:
+  - `00-simulate_data.R`: Simulates shelter data for testing purposes.
+  - `01-download_data.R`: Downloads actual data from Open Data Toronto.
+  - `02-data_cleaning.R`: Cleans and processes the downloaded data.
+  - `03-test_data.R`: Tests the data for consistency and accuracy.
+- `paper`: Contains the Quarto document (`paper.qmd`) used to generate the final PDF report.
 
+## Instructions
 
-## Statement on LLM usage
+1. Ensure the following R packages are installed: `tidyverse`, `opendatatoronto`, `janitor`, and `knitr`.
+2. Run the scripts in sequence:
+   - `00-simulate_data.R` for simulated data.
+   - `01-download_data.R` to download the actual data.
+   - `02-data_cleaning.R` for data cleaning.
+   - `03-test_data.R` for data integrity tests.
+3. Render the `paper.qmd` file using Quarto to generate the final PDF report.
 
-Aspects of the code were written with the help of the auto-complete tool, Codriver. The abstract and introduction were written with the help of ChatHorse and the entire chat history is available in inputs/llms/usage.txt.
+## Statement on LLM Usage
 
-## Some checks
+No AI tools were used in the creation of this project. All code and documentation were manually written by the author.
 
-- [ ] Change the rproj file name so that it's not starter_folder.Rproj
-- [ ] Change the README title so that it's not Starter folder
-- [ ] Remove files that you're not using
-- [ ] Update comments in R scripts
-- [ ] Remove this checklist
+## Additional Notes
+
+- The dataset is saved as `toronto_shelters_raw_2023.csv` in the `data/raw_data` folder.
+- The project is fully reproducible, and no manual data downloads are required.
