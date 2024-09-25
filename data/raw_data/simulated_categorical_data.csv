@@ -1,0 +1,151 @@
+Division,Sector,Program_Model,Overnight_Service_Type,Program_Area
+1,Women,Transitional,Warming Centre,Base Program - Refugee
+2,Mixed Adult,Transitional,24-Hour Respite,Base Shelter and Overnight Services System
+3,Family,Emergency,24-Hour Women's Drop-in,Winter Response
+4,Mixed Adult,Emergency,Shelter,Temporary Refugee Response
+5,Mixed Adult,Emergency,24-Hour Women's Drop-in,Base Program - Refugee
+6,Women,Emergency,Motel/Hotel,Base Shelter and Overnight Services System
+7,Family,Emergency,Isolation/Recovery Site,Winter Response
+8,Mixed Adult,Transitional,Shelter,COVID-19 Response
+9,Women,Emergency,Warming Centre,Base Shelter and Overnight Services System
+10,Family,Emergency,Isolation/Recovery Site,Temporary Refugee Response
+11,Men,Emergency,24-Hour Women's Drop-in,Winter Response
+12,Men,Transitional,24-Hour Women's Drop-in,Temporary Refugee Response
+13,Youth,Emergency,24-Hour Women's Drop-in,COVID-19 Response
+14,Mixed Adult,Transitional,Isolation/Recovery Site,Winter Response
+15,Women,Transitional,Warming Centre,Temporary Refugee Response
+16,Mixed Adult,Emergency,Isolation/Recovery Site,Temporary Refugee Response
+17,Men,Transitional,Shelter,Base Program - Refugee
+18,Mixed Adult,Emergency,Isolation/Recovery Site,COVID-19 Response
+19,Men,Transitional,Isolation/Recovery Site,Winter Response
+20,Women,Emergency,Motel/Hotel,Base Program - Refugee
+21,Family,Transitional,Interim Housing,Temporary Refugee Response
+22,Mixed Adult,Emergency,Interim Housing,Temporary Refugee Response
+23,Family,Transitional,24-Hour Women's Drop-in,Base Program - Refugee
+24,Men,Emergency,Motel/Hotel,COVID-19 Response
+25,Mixed Adult,Transitional,Isolation/Recovery Site,Base Program - Refugee
+26,Youth,Transitional,Isolation/Recovery Site,COVID-19 Response
+27,Mixed Adult,Emergency,24-Hour Women's Drop-in,Base Shelter and Overnight Services System
+28,Mixed Adult,Transitional,24-Hour Respite,Base Shelter and Overnight Services System
+29,Family,Emergency,Isolation/Recovery Site,COVID-19 Response
+30,Family,Emergency,Warming Centre,Temporary Refugee Response
+31,Mixed Adult,Transitional,Shelter,Base Shelter and Overnight Services System
+32,Women,Emergency,Interim Housing,Base Program - Refugee
+33,Women,Transitional,Warming Centre,COVID-19 Response
+34,Family,Emergency,Warming Centre,COVID-19 Response
+35,Youth,Emergency,Warming Centre,Base Shelter and Overnight Services System
+36,Youth,Transitional,Interim Housing,Temporary Refugee Response
+37,Family,Emergency,Warming Centre,Winter Response
+38,Women,Emergency,Motel/Hotel,COVID-19 Response
+39,Youth,Transitional,24-Hour Women's Drop-in,Base Program - Refugee
+40,Mixed Adult,Emergency,Warming Centre,Base Program - Refugee
+41,Family,Emergency,Shelter,Base Shelter and Overnight Services System
+42,Women,Transitional,24-Hour Respite,COVID-19 Response
+43,Mixed Adult,Transitional,Interim Housing,Base Shelter and Overnight Services System
+44,Men,Emergency,Motel/Hotel,Winter Response
+45,Men,Emergency,Interim Housing,Base Shelter and Overnight Services System
+46,Youth,Emergency,24-Hour Women's Drop-in,Temporary Refugee Response
+47,Family,Transitional,Isolation/Recovery Site,Base Shelter and Overnight Services System
+48,Youth,Emergency,Shelter,COVID-19 Response
+49,Men,Emergency,24-Hour Respite,Winter Response
+50,Youth,Transitional,Shelter,Temporary Refugee Response
+51,Women,Transitional,24-Hour Respite,Base Shelter and Overnight Services System
+52,Mixed Adult,Transitional,Isolation/Recovery Site,Winter Response
+53,Men,Transitional,24-Hour Women's Drop-in,Winter Response
+54,Mixed Adult,Transitional,Shelter,COVID-19 Response
+55,Men,Transitional,Interim Housing,Winter Response
+56,Men,Emergency,24-Hour Women's Drop-in,Base Shelter and Overnight Services System
+57,Youth,Transitional,24-Hour Women's Drop-in,COVID-19 Response
+58,Women,Transitional,24-Hour Respite,Base Program - Refugee
+59,Women,Emergency,Motel/Hotel,Temporary Refugee Response
+60,Mixed Adult,Transitional,Interim Housing,Base Shelter and Overnight Services System
+61,Mixed Adult,Transitional,24-Hour Respite,Temporary Refugee Response
+62,Women,Transitional,Isolation/Recovery Site,Temporary Refugee Response
+63,Women,Emergency,24-Hour Respite,Temporary Refugee Response
+64,Youth,Emergency,Motel/Hotel,Temporary Refugee Response
+65,Family,Emergency,Warming Centre,COVID-19 Response
+66,Women,Transitional,Isolation/Recovery Site,Winter Response
+67,Women,Emergency,Motel/Hotel,Winter Response
+68,Family,Emergency,Warming Centre,COVID-19 Response
+69,Family,Transitional,24-Hour Women's Drop-in,Base Program - Refugee
+70,Family,Transitional,Interim Housing,COVID-19 Response
+71,Youth,Emergency,24-Hour Women's Drop-in,Base Program - Refugee
+72,Youth,Transitional,Interim Housing,Base Program - Refugee
+73,Mixed Adult,Emergency,Isolation/Recovery Site,Base Program - Refugee
+74,Women,Emergency,24-Hour Respite,COVID-19 Response
+75,Youth,Emergency,Interim Housing,Base Program - Refugee
+76,Mixed Adult,Transitional,Warming Centre,Base Program - Refugee
+77,Women,Transitional,24-Hour Respite,Winter Response
+78,Women,Emergency,Warming Centre,Base Program - Refugee
+79,Men,Transitional,Motel/Hotel,Winter Response
+80,Family,Transitional,Interim Housing,Winter Response
+81,Mixed Adult,Emergency,Motel/Hotel,Winter Response
+82,Mixed Adult,Emergency,Warming Centre,Temporary Refugee Response
+83,Family,Emergency,24-Hour Respite,Winter Response
+84,Women,Transitional,Interim Housing,Base Program - Refugee
+85,Women,Transitional,24-Hour Women's Drop-in,COVID-19 Response
+86,Women,Transitional,24-Hour Respite,Temporary Refugee Response
+87,Family,Transitional,Shelter,Winter Response
+88,Women,Transitional,Shelter,Temporary Refugee Response
+89,Mixed Adult,Transitional,Shelter,Base Shelter and Overnight Services System
+90,Family,Emergency,Motel/Hotel,COVID-19 Response
+91,Women,Emergency,24-Hour Respite,Temporary Refugee Response
+92,Mixed Adult,Emergency,Motel/Hotel,Temporary Refugee Response
+93,Family,Emergency,Motel/Hotel,Base Program - Refugee
+94,Women,Transitional,Isolation/Recovery Site,Base Shelter and Overnight Services System
+95,Mixed Adult,Emergency,Interim Housing,Winter Response
+96,Youth,Transitional,Interim Housing,COVID-19 Response
+97,Men,Emergency,Motel/Hotel,Temporary Refugee Response
+98,Mixed Adult,Transitional,24-Hour Women's Drop-in,Base Shelter and Overnight Services System
+99,Youth,Emergency,Warming Centre,Base Program - Refugee
+100,Youth,Emergency,Interim Housing,Temporary Refugee Response
+101,Family,Emergency,Isolation/Recovery Site,Base Program - Refugee
+102,Men,Emergency,Interim Housing,Temporary Refugee Response
+103,Youth,Emergency,Interim Housing,Base Program - Refugee
+104,Youth,Emergency,Shelter,Base Program - Refugee
+105,Family,Emergency,24-Hour Women's Drop-in,Base Shelter and Overnight Services System
+106,Men,Emergency,Shelter,Winter Response
+107,Youth,Emergency,Warming Centre,Base Shelter and Overnight Services System
+108,Youth,Emergency,Warming Centre,Base Shelter and Overnight Services System
+109,Mixed Adult,Transitional,Warming Centre,Base Shelter and Overnight Services System
+110,Mixed Adult,Emergency,Warming Centre,Winter Response
+111,Youth,Emergency,24-Hour Women's Drop-in,Winter Response
+112,Youth,Emergency,24-Hour Respite,Base Shelter and Overnight Services System
+113,Family,Transitional,24-Hour Respite,Temporary Refugee Response
+114,Family,Emergency,24-Hour Women's Drop-in,Base Shelter and Overnight Services System
+115,Family,Emergency,24-Hour Women's Drop-in,Temporary Refugee Response
+116,Men,Transitional,24-Hour Women's Drop-in,Base Program - Refugee
+117,Mixed Adult,Transitional,Warming Centre,Base Shelter and Overnight Services System
+118,Family,Transitional,Isolation/Recovery Site,Temporary Refugee Response
+119,Family,Emergency,Interim Housing,Base Program - Refugee
+120,Mixed Adult,Emergency,Shelter,Temporary Refugee Response
+121,Men,Emergency,Interim Housing,Base Program - Refugee
+122,Family,Transitional,Shelter,COVID-19 Response
+123,Mixed Adult,Transitional,24-Hour Women's Drop-in,Winter Response
+124,Family,Transitional,Warming Centre,Winter Response
+125,Mixed Adult,Emergency,Motel/Hotel,Winter Response
+126,Youth,Transitional,Warming Centre,COVID-19 Response
+127,Men,Emergency,Warming Centre,Winter Response
+128,Men,Transitional,Isolation/Recovery Site,Temporary Refugee Response
+129,Mixed Adult,Emergency,24-Hour Respite,Base Shelter and Overnight Services System
+130,Mixed Adult,Transitional,Warming Centre,COVID-19 Response
+131,Youth,Transitional,Interim Housing,Base Shelter and Overnight Services System
+132,Youth,Emergency,Isolation/Recovery Site,Base Shelter and Overnight Services System
+133,Women,Emergency,Shelter,COVID-19 Response
+134,Youth,Transitional,Motel/Hotel,Base Shelter and Overnight Services System
+135,Mixed Adult,Emergency,Isolation/Recovery Site,Temporary Refugee Response
+136,Mixed Adult,Transitional,24-Hour Respite,Base Program - Refugee
+137,Mixed Adult,Transitional,Motel/Hotel,Base Program - Refugee
+138,Men,Emergency,24-Hour Respite,COVID-19 Response
+139,Men,Transitional,Isolation/Recovery Site,Base Shelter and Overnight Services System
+140,Mixed Adult,Emergency,24-Hour Respite,Base Program - Refugee
+141,Youth,Emergency,Warming Centre,Winter Response
+142,Mixed Adult,Transitional,Interim Housing,COVID-19 Response
+143,Family,Transitional,Shelter,Winter Response
+144,Youth,Emergency,Interim Housing,Base Shelter and Overnight Services System
+145,Men,Emergency,Shelter,COVID-19 Response
+146,Family,Emergency,Isolation/Recovery Site,COVID-19 Response
+147,Men,Emergency,24-Hour Respite,Temporary Refugee Response
+148,Mixed Adult,Transitional,Shelter,Base Program - Refugee
+149,Youth,Transitional,24-Hour Women's Drop-in,COVID-19 Response
+150,Youth,Emergency,Shelter,Temporary Refugee Response
