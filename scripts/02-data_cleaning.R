@@ -50,14 +50,16 @@ cleandt <- dt |>
   mutate(
     Time = ymd(parse_date_time(paste(Month, Year), orders = "b Y")),  
     # Create a new 'Time' variable by combining 'Month' and 'Year' into a date (format: YYYY-MM-DD)
-    OtherGender = as.integer(na_if(OtherGender, "n/a"))  
+    OtherGender = na_if(OtherGender, "n/a")  ,
     # Convert 'OtherGender' to integer and replace "n/a" values with NA (missing values)
+    across(c(Year, Total_Death, Male, Female, OtherGender), as.integer) 
+    # Convert the 'Year', 'Total_Death', 'Male', 'Female', and 'OtherGender' columns to integer type
   ) %>%
   select(-c(id))  # Remove the 'id' column as it is not needed for further analysis
 
 # Summarize and inspect the cleaned data
 summary(cleandt)  
-# Display a summary of the cleaned data, including statistics for each variable
+ # Display a summary of the cleaned data, including statistics for each variable
 
 cleandt <- cleandt %>% select(-OtherGender)  
 # Drop the 'OtherGender' column, as most values are missing, making it less useful for analysis
@@ -65,3 +67,5 @@ cleandt <- cleandt %>% select(-OtherGender)
 ### Output clean data
 write_csv(cleandt, "./data/cleaned_data/Deaths_of_Shelter_Residents_Cleaned.csv")  
 # Save the cleaned data as a CSV file in the 'data/cleaned_data' directory for further analysis
+
+cleandt
