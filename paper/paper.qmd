@@ -5,13 +5,17 @@ author:
 thanks: "Code and data are available at: [https://github.com/RohanAlexander/starter_folder](https://github.com/RohanAlexander/starter_folder)."
 date: today
 date-format: long
-abstract: "The number of deaths among shelter residents in Toronto is a good index assessing the living conditions and health risks faced by homeless populations. We visualized the data to examine time trends, pandemic impacts, and gender differences in shelter deaths. Our findings suggest that winter may have the highest number of deaths and that COVID-19 increased the death count by three times. This analysis draws the attention of policymakers and encourages further statistical examination to reach significant conclusions."
-format: pdf
-number-sections: true
+abstract: "The number of deaths among shelter residents in Toronto is a good index assessing the living conditions and health risks faced by homeless populations. We visualized the data to examine time trends, pandemic impacts, and gender differences in shelter deaths. Our findings suggest seasonal difference and strong COVID-19 impact on death increment. This analysis draws the attention of policymakers and encourages further statistical examination to reach significant conclusions."
+
+format:
+  pdf:
+    toc: true
+    toc-depth: 2
+    number-sections: true
 bibliography: references.bib
 csl: nature.csl
 editor_options: 
-  chunk_output_type: console
+chunk_output_type: console
 ---
 
 ```{r}
@@ -26,6 +30,7 @@ library(ggplot2)
 library(scales)
 library(knitr)
 ```
+
 
 # Introduction
 
