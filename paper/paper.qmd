@@ -55,18 +55,12 @@ The raw dataset comprises the following key fields:
 
 -   **Male** , **Female** and **Transgender/Non-binary/Two-Spirit**: Detailed number of deaths by genders.
 
-```{r cleaning}
+```{r readdata}
 #| echo: false
 #| warning: false
+
 i_am("README.md")
-dt <- read.csv(here("data","raw_data","Deaths_of_Shelter_Residents.csv"))
-dt <- dt %>% mutate(
-  Time = ymd(parse_date_time(paste(Month,Year),orders="b Y")),
-  Other_gender = as.integer(na_if(Transgender.Non.binary.Two.Spirit,"n/a"))
-  ) %>% 
-  rename(Total_Death = Total.decedents) %>%
-  select(-c(X_id,Transgender.Non.binary.Two.Spirit,Other_gender))
-write.csv(dt,here("data","cleaned_data","Deaths_of_Shelter_Residents_Cleaned.csv"))
+dt <- read_csv(here("data","cleaned_data","Deaths_of_Shelter_Residents_Cleaned.csv"))
 ```
 
 We used R 4.3 for analysis and followed a public template @citeR@citeRohan. and a collection of R packages were used in this study:
