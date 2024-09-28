@@ -9,6 +9,7 @@ abstract: "The number of deaths among shelter residents in Toronto is a good ind
 format: pdf
 number-sections: true
 bibliography: references.bib
+csl: nature.csl
 editor_options: 
   chunk_output_type: console
 ---
@@ -68,7 +69,7 @@ dt <- dt %>% mutate(
 write.csv(dt,here("data","cleaned_data","Deaths_of_Shelter_Residents_Cleaned.csv"))
 ```
 
-We used R 4.3 for analysis and a collection of R packages were used in this study @citeR:
+We used R 4.3 for analysis and followed a public template @citeR@citeRohan. and a collection of R packages were used in this study:
 
 - tidyverse @Citetidyverse
 - here @Citehere
@@ -77,8 +78,7 @@ We used R 4.3 for analysis and a collection of R packages were used in this stud
 - scales @Citescales
 - knitr @Citeknitr
 
-
-Data cleaning steps are described in the Appendix. A sample of the cleaned data is presented in @tbl-s-m-death.
+Data cleaning steps are described in the [Appendix](#sec-appendix). A sample of the cleaned data is presented in @tbl-s-m-death.
 
 ```{r}
 #| label: tbl-s-m-death
@@ -92,7 +92,7 @@ kable(head(dt))
 
 ## Data overview
 
-@fig-overview shows the overall trend of deaths in Toronto shelters. The number of monthly deaths fluctuates over time and increases slightly before the COVID-19 period. There is an increase of death during COVID period. After COVID-19, the death rate returned to a normal level of about 5-10 per month..
+@fig-overview shows the overall trend of deaths in Toronto shelters. The numbers of monthly deaths fluctuate over time and increases slightly before the COVID-19 period. There is an outbreak of death during COVID period. After COVID-19, the numbers of death dropped down but the still showed an overall increase.
 
 ```{r}
 #| label: fig-overview
@@ -103,31 +103,31 @@ p1 <- ggplot(dt, aes(x = Time, y = Total_Death)) +
   geom_point() +             # Adds points to the line
   scale_x_date(date_breaks = "3 year", date_minor_breaks = "1 month",
              date_labels = "%Y")+
-  labs(x = "Time", y = "Monthly Death") 
+  labs(x = "Time", y = "Monthly Death") + geom_smooth()
 print(p1)
 ```
 
 ## COVID-19 impact
 
-We defined the COVID-19 period as spanning from January 2020 to May 2023 and summarized the number of monthly deaths by mean and standard deviation for both the COVID-19 and non-COVID periods, as shown in @fig-covid. The mean number of monthly deaths during the COVID-19 period was more than three times that of the non-COVID period. The typical number of monthly deaths was around 3, while during the COVID-19 period, it increased to nearly 9.  There are a few outliers in both periods, indicating other timely factors that may have influenced the death rate of homeless individuals in Toronto shelters.
+We defined the COVID-19 period as spanning from January 2020 to May 2023 and used histogram to show the distribution of numbers of monthly deaths for both the COVID-19 and non-COVID periods, as shown in @fig-covid. The numbers of monthly deaths during the COVID-19 period ranged from 0 to 18 and most values are between 5 to 15. The typical number of monthly deaths in non-COVID period was around 3. Visually COVID-19 resulted in a three-fold increase in monthly death.
 
 ```{r}
 #| label: fig-covid
 #| echo: false
 #| warning: false
-#| fig-cap: "Boxplots of Monthly Deaths in Toronto Shelters for Covid and Non-Covid Periods"
+#| fig-cap: "Histogram of Monthly Deaths in Toronto Shelters for Covid and Non-Covid Periods"
 dt <- dt %>%
   mutate(covid = if_else(Time >= as.Date("2020-01-01") & Time <= as.Date("2023-05-01"), "Covid_period", "NonCovid_period"))
-p2 <- ggplot(dt, aes(x = covid, y = Total_Death, fill = covid)) +
-  geom_boxplot() +
-  labs(y = "Number of Deaths") +
+p2 <- ggplot(dt, aes(x = Total_Death, fill = covid)) +
+  geom_histogram(binwidth = 1, position = "dodge") +  # Creates histogram with separate bars for each group
+  labs(x = "Number of Deaths", y = "Count") +         # Adjust labels
   theme_minimal()
 print(p2)
 ```
 
 ## Season impact
 
-We also explored the seasonal impact on the number of deaths. @fig-season presents boxplots of deaths by season. Visually, winter shows a slightly higher number of deaths, but the difference is not significant. There are some outliers with extremely high death counts, which were caused by COVID-19.
+We also explored the seasonal impact on the number of deaths. @fig-season presents boxplots of deaths by season. Visually, the fall season showed a slightly lower mean number of deaths. The average number of deaths is similar for spring, summer, and winter, with winter showing the highest lower bound of the interquartile range. There are some outliers with extremely high death counts, likely caused by COVID-19.
 
 ```{r}
 #| label: fig-season
@@ -150,16 +150,16 @@ print(p3)
 
 ## Gender impact
 
-@fig-gender shows that the number of deaths among males is significantly higher than that among females. However, we cannot conclude that males are at a higher risk than females, as we do not have detailed information on the total number of male and female residents in Toronto shelters. Further analysis will be required once additional data is collected.
+@fig-gender shows that the total number of deaths among males is significantly higher than that among females since 2007. However, we cannot conclude that males are at a higher risk than females, as we do not have detailed information on the total number of male and female residents in Toronto shelters. Further analysis will be required once additional data is collected.
 
 ```{r}
 #| label: fig-gender
 #| echo: false
 #| warning: false
-#| fig-cap: "Boxplots of Monthly Deaths in Toronto Shelters by Gender"
+#| fig-cap: "Barplots of Monthly Deaths in Toronto Shelters by Gender"
 dt_long <- dt %>% pivot_longer(cols=c("Male","Female"),names_to = "Gender",values_to = "Deaths")
 p4 <- ggplot(dt_long, aes(x = Gender, y = Deaths, fill = Gender)) +
-  geom_boxplot() +
+  geom_bar(stat = "identity") +
   labs(y = "Number of Deaths") +
   theme_minimal()
 print(p4)
@@ -185,9 +185,9 @@ We identified potential timely trends in deaths, such as seasonal impacts and pa
 
 \appendix
 
-# Appendix {-}
+# Appendix {#sec-appendix .unnumbered}
 
-Data Cleaning Steps
+**Data Cleaning Steps**
 
 Raw data from Open Data Toronto were prepared, so we did not need to perform many cleaning steps. A few cleaning steps are as follows:
 
