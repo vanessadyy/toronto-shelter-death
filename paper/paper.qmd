@@ -4,16 +4,19 @@ author:
   - Yiyue Deng
 thanks: "Code and data are available at: [https://github.com/RohanAlexander/starter_folder](https://github.com/RohanAlexander/starter_folder)."
 date: today
+mainfont: Arial
 date-format: long
 abstract: "The number of deaths among shelter residents in Toronto is a good index assessing the living conditions and health risks faced by homeless populations. We visualized the data to examine time trends, pandemic impacts, and gender differences in shelter deaths. Our findings suggest seasonal difference and strong COVID-19 impact on death increment. This analysis draws the attention of policymakers and encourages further statistical examination to reach significant conclusions."
 
+include-before:
+- '\newpage'
 format:
   pdf:
     toc: true
     toc-depth: 2
     number-sections: true
 bibliography: references.bib
-csl: nature.csl
+csl: apa6.csl
 editor_options: 
 chunk_output_type: console
 ---
@@ -31,34 +34,40 @@ library(scales)
 library(knitr)
 ```
 
+\newpage
 
 # Introduction
 
-In examining urban social issues, the living conditions and health risks faced by homeless populations have long been a central concern. According to the latest report from Trillium, Toronto's shelter system has the capacity to house around 10,000 individuals at a time. This number highlights the seriousness of the city's homelessness challenge and reflects society’s ongoing efforts to address the basic needs of this vulnerable group @thetrillium_homelessness. Despite this capacity, conditions for homeless individuals remain challenging. Data from Fred Victor shows that the daily shelter occupancy rate consistently hovers at approximately 98% @fredvictor_homelessness. This high utilization indicates not only the pressing demand but also the strain on shelter resources and management.
+Walking through the streets of Toronto these days, it’s hard not to see the stark realities that homeless people feel every day. From the makeshift tent cities in park corners to the weary figures lining up for a meal outside the food bank, the plight of the city’s homeless population is visible and poignant. At times, I wonder why do so many people sleep outside of shelters or not
+try to use the resources that the government have provided them. It is amid these daily scenes, the challenges they face that an amalgamation of health risks, safety concerns, and social neglect portrays a broader picture of deeply rooted social issues that demand our attention.
 
-Behind this high occupancy rate lies a concerning mortality rate among homeless individuals. On average, three homeless people die each week in or near shelters—a rate significantly higher than that of the general population. This increase in mortality reflects the heightened health risks faced by this group and poses a significant challenge to urban society's commitment to public welfare.
+In examining these social issues, the living conditions and health risks faced by homeless populations have long been and will continue to be the main concern. Toronto’s shelter system, according to the latest report from Trillium, has the capacity to house around 10,000 individuals at any given time. This number highlights the seriousness of the city’s homelessness challenge and reflects ongoing efforts to meet the basic needs of this vulnerable group @thetrillium_homelessness. However, despite these provisions, conditions for homeless individuals remain deeply challenging. Data from Fred Victor reveals that the daily shelter occupancy rate consistently hovers at approximately 98%, indicating not only a pressing demand but a significant strain on overall shelter resources and management @fredvictor_homelessness. Furthermore, behind this high occupancy rate lies a deeply concerning mortality rate among the homeless. On average, three homeless people die each week in or near shelters, a rate significantly higher than that of the general population. This alarming statistic underscores the heightened health risks faced by this group and poses a critical challenge to urban society’s commitment to public welfare. There are even further additional statistics from Toronto’s
+database that reinforce the gravity of the situation, demonstrating that homeless individuals experience not only a higher incidence of illness but also an unusually elevated rate of unnatural deaths @toronto_shelter_deaths.
 
-Additional statistics from Toronto.ca reinforce the gravity of the situation, showing that homeless individuals experience not only a higher incidence of illness but also an unusually elevated rate of unnatural deaths @toronto_shelter_deaths. In response, the Toronto government has committed to enhancing its emergency response protocols within shelters, demonstrating its commitment to safeguarding the health of this population. These measures are an essential component of efforts to create a more inclusive and resilient city.
+In response, what has the government done? Well, the Toronto government has committed to enhancing its emergency response protocols within shelters, demonstrating a proactive commitment to safeguarding the health of this population. These measures are without question crucial components of efforts to create a more inclusive and resilient city. However, is merely augmenting
+emergency responses sufficient? I think that there is a need to examine the patterns and underlying causes of medical emergencies in shelters, what truly happens inside these “safe havens” for homeless individuals and why some of them even refuse to go there at all. If we truly succeed in this, we could finally begin to properly optimize emergency response strategies to prevent these tragic outcomes.
 
-However, reducing the mortality rate among homeless individuals requires more than emergency responses. There is a need to examine the patterns and underlying causes of medical emergencies in shelters, which could help optimize emergency response strategies into preventing these tragic outcomes. Analyzing the time trends and possible contributing factors behind these deaths is essential for developing effective prevention strategies.
+This paper aims to analyze the temporal patterns of deaths within Toronto’s shelter system and to investigate the factors that may influence mortality rates. The specific objectives are to examine the time trends in shelter death rates since 2007, identify periods of higher and lower mortality rates, assess the impact of external events such as COVID-19 on shelter deaths, and explore gender differences in shelter mortality. Through this analysis, I hope to provide data-driven recommendations that can help inform and propose more targeted, timely policies toward the homeless population that may prove to be the first step in addressing the homeless problem in Toronto. The remainder of the paper will be structured as follows: Methodologies employed in
+gathering and analyzing the data @sec-data, present the findings and their implications @sec-analysis, and finally discuss the broader context and recommendations for future policy development @sec-discussion.
 
-Against this backdrop, this paper aims to analyze the temporal patterns of deaths within Toronto's shelter system and investigate the factors that may influence mortality rates. The specific objectives are as follows:
 
-Examine the time trends in shelter death rates since 2007. Identify periods of higher and lower mortality rates. Assess the impact of external events, such as COVID-19, on shelter deaths. Explore gender differences in shelter mortality. Through this analysis, we hope to provide data-driven recommendations that can inform more targeted, timely policies. Ultimately, the goal is to contribute to a more just, healthy, and inclusive society where every life is respected and protected.
+# Data and methods {#sec-data}
 
-The remainder of this paper is structured as follows: @sec-data describes the data source and analysis methods, @sec-analysis presents analytical results, and @sec-discussion discusses with strength and limitations of the research as well as policy recommendations.
+## Data Collection and Publication
 
-# Data {#sec-data}
+The data on shelter resident deaths in Toronto has been collected by the City's Shelter and Support Services Division since 2007 @toronto_shelter_deaths. When a resident or recent resident passes away, shelter operators are required to notify the City within 24 hours and submit a detailed report in PDF format within 30 days. This process helps the City monitor emerging issues within the shelter system and respond appropriately.
 
-The dataset used in this study was obtained from [Open Data Toronto](https://open.toronto.ca/dataset/deaths-of-shelter-residents/), offering monthly records of deaths in Toronto shelter since 2007. Data were stratified by genders.
+The dataset is publicly available through Toronto Public Health's "Deaths of People Experiencing Homelessness" dashboard and is updated annually. The most recent update was released on September 19, 2024.
 
-The raw dataset comprises the following key fields:
+## Data Source
 
--   **Year** and **Month**: Time of records.
+The dataset used in this study was obtained from [Open Data Toronto](https://open.toronto.ca/dataset/deaths-of-shelter-residents/). The raw dataset comprises the following key fields:
 
--   **Total decedents** : Total number of deaths in Toronto shelters.
+-   **Year** and **Month**: The calendar year and month when the data for shelter resident deaths is reported.
 
--   **Male** , **Female** and **Transgender/Non-binary/Two-Spirit**: Detailed number of deaths by genders.
+-   **Total decedents** : The total number of shelter residents who passed away during the reported month and year.
+
+-   **Male** , **Female** and **Transgender/Non-binary/Two-Spirit**: Detailed number of shelter residents who died in the reported month and year by genders.
 
 ```{r readdata}
 #| echo: false
@@ -67,6 +76,8 @@ The raw dataset comprises the following key fields:
 i_am("README.md")
 dt <- read_csv(here("data","cleaned_data","Deaths_of_Shelter_Residents_Cleaned.csv"))
 ```
+
+## Software and Packages
 
 We used R 4.3 for analysis and followed a public template @citeR@citeRohan. and a collection of R packages were used in this study:
 
@@ -77,7 +88,9 @@ We used R 4.3 for analysis and followed a public template @citeR@citeRohan. and 
 - scales @Citescales
 - knitr @Citeknitr
 
-Data cleaning steps are described in the [Appendix](#sec-appendix). A sample of the cleaned data is presented in @tbl-s-m-death.
+## Data Management
+
+Data cleaning steps are described in the [Appendix](#sec-appendix). A sample of the cleaned data is presented in @tbl-s-m-death. Among all variables, Year, Total_Death, Male, and Female are coded as integers, Month is coded as abbreviations in character format, and Time is coded in date format. After data cleaning, there are no missing values remaining in the dataset.
 
 ```{r}
 #| label: tbl-s-m-death
@@ -89,7 +102,7 @@ kable(head(dt))
 
 # Analysis {#sec-analysis}
 
-## Data overview
+## Data Overview
 
 @fig-overview shows the overall trend of deaths in Toronto shelters. The numbers of monthly deaths fluctuate over time and increases slightly before the COVID-19 period. There is an outbreak of death during COVID period. After COVID-19, the numbers of death dropped down but the still showed an overall increase.
 
@@ -106,7 +119,7 @@ p1 <- ggplot(dt, aes(x = Time, y = Total_Death)) +
 print(p1)
 ```
 
-## COVID-19 impact
+## COVID-19 Impact
 
 We defined the COVID-19 period as spanning from January 2020 to May 2023 and used histogram to show the distribution of numbers of monthly deaths for both the COVID-19 and non-COVID periods, as shown in @fig-covid. The numbers of monthly deaths during the COVID-19 period ranged from 0 to 18 and most values are between 5 to 15. The typical number of monthly deaths in non-COVID period was around 3. Visually COVID-19 resulted in a three-fold increase in monthly death.
 
@@ -124,7 +137,7 @@ p2 <- ggplot(dt, aes(x = Total_Death, fill = covid)) +
 print(p2)
 ```
 
-## Season impact
+## Season Impact
 
 We also explored the seasonal impact on the number of deaths. @fig-season presents boxplots of deaths by season. Visually, the fall season showed a slightly lower mean number of deaths. The average number of deaths is similar for spring, summer, and winter, with winter showing the highest lower bound of the interquartile range. There are some outliers with extremely high death counts, likely caused by COVID-19.
 
@@ -147,7 +160,7 @@ p3 <- ggplot(dt, aes(x = season, y = Total_Death, fill = season)) +
 print(p3)
 ```
 
-## Gender impact
+## Gender Impact
 
 @fig-gender shows that the total number of deaths among males is significantly higher than that among females since 2007. However, we cannot conclude that males are at a higher risk than females, as we do not have detailed information on the total number of male and female residents in Toronto shelters. Further analysis will be required once additional data is collected.
 
@@ -166,7 +179,7 @@ print(p4)
 
 # Discussion {#sec-discussion}
 
-## Summary of findings
+## Summary of Findings
 
 In this paper, we analyzed data on the number of shelter deaths in the Toronto area. From our analysis, we identified the following key points: 1. The number of deaths in Toronto shelters has increased slightly each year since 2007, despite the impact of COVID-19; 2. COVID-19 significantly increased the number of deaths by three times; 3. Seasonal impacts exist but are not visually significant regarding the number of deaths; 4. The majority of deaths in shelters are among males.
 
